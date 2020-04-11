@@ -9,6 +9,9 @@
     nav {
         font-size: 1rem;
     }
+    #navbar_title{
+        font-size:2rem;
+    }
     .navbar-brand{
         width:100%;
     }
@@ -23,12 +26,15 @@
         top:0;
         z-index: 1000;
     }
-    nav div i,a{
+    nav div i,a,p{
         font-size:0.8rem;
+    }
+    nav div button{
+        font-size: 1.3rem;
     }
     .logo { 
         height:30px;
-        widows: 30px;
+        width: 30px;
     }
 
 

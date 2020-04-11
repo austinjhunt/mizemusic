@@ -89,3 +89,9 @@ def update_title_handler(request):
 
 def calendar_handler(request): 
 	return render(template_name="calendar.html", context={},request=request)
+
+def review_handler(request): 
+    if request.method == "POST": 
+        print(request.POST)
+    elif request.method == "GET": 
+        return render(template_name="review.html",context={},request=request)

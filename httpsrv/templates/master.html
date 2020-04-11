@@ -67,25 +67,27 @@
                 </div>
             </div>
         </section>
-        <div id="header" class="pos-f-t">
+        <div id="header" class="pos-f-t w-100">
             <!--<div class="collapse " id="navbarToggleExternalContent">
                 <div class="bg-dark p-4">
                     <h3 class="text-white font-2p5 navbar-brand">Mize Music</h3>
                     <span class="text-light">Learni</span>
                 </div>
             </div>-->
-            <nav class="navbar navbar-dark bg-black sf-bold p-2">
+            <nav class="col-md-12 navbar navbar-dark bg-black sf-bold p-2">
                 <!--<button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>-->
-                <div class="ml-5 navbar-brand">
+                <div class="col-9 pl-3 text-left text-light">
                     <img class="d-inline-block align-middle logo" src="{% static 'images/whitewestonlogo.png' %}" >
                     <div class="d-inline-block align-middle" id="navbar_title" {% if superuser %}contenteditable="true" {%endif%}>{{navbar_title}}</div>
+                </div>  
+                <div class="col-3 text-right">
+                    <button class="text-light" id="navtogglebutton" data-toggle="collapse" aria-expanded="false" data-target="#navbuttoncontainer"><i class="fa fa-bars"></i></button>
                 </div>
-
-                <div class="navbar-buttons-container raleway text-right d-inline-block">
+                <div id="navbuttoncontainer" class="col-12 collapse navbar-buttons-container raleway text-center">
                     <!--<input class="mx-5" type="color" id="bgcolorpicker" value="{{bgcolor}}">-->
                     <a href="/"><i class=" fa fa-home"></i></a>
                     {% if authenticated %}
@@ -97,6 +99,7 @@
                     <a href="/login/"><i class=" fa fa-sign-in-alt"></i></a>
                     {% endif %}
                 </div>
+                
             </nav>
         </div>
 
@@ -132,7 +135,7 @@
             </div>
 
             <!-- Copyright -->
-            <div class="col-12 footer-copyright text-center font-0p8 text-light">Developed by&nbsp;<a class="text-light" href="http://sketchyactivity.com">Austin Hunt, BS Computer
+            <div class="col-12 footer-copyright text-center text-light">Developed by&nbsp;<a class="text-light" href="http://sketchyactivity.com">Austin Hunt, BS Computer
                     Science</a></div>
             <!-- Copyright -->
 

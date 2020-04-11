@@ -1,0 +1,50 @@
+{% extends 'master.html' %}
+{% block content %}
+ <!-- line of color -->
+ <div class="index-info-container row bg-dark col-md-12 m-0 p-0 position-relative h-4" >
+    <form class="form-horizontal" method="post" action="/review/">
+        <fieldset>
+        {% csrf_token %}
+        <!-- Form Name -->
+        <legend>Leave a Review</legend>
+        
+        <!-- Multiple Radios (inline) -->
+        <div class="form-group col-md-10 text-center m-0-auto">
+          <label class="col-md-4 control-label" for="star-rating">How would you rate the lesson?</label>
+          <div class="col-md-4"> 
+            <label class="radio-inline" for="star-rating-0">
+              <input type="radio" name="star-rating" id="star-rating-0" value="1" checked="checked">
+              1
+            </label> 
+            <label class="radio-inline" for="star-rating-1">
+              <input type="radio" name="star-rating" id="star-rating-1" value="2">
+              2
+            </label> 
+            <label class="radio-inline" for="star-rating-2">
+              <input type="radio" name="star-rating" id="star-rating-2" value="3">
+              3
+            </label> 
+            <label class="radio-inline" for="star-rating-3">
+              <input type="radio" name="star-rating" id="star-rating-3" value="4">
+              4
+            </label> 
+            <label class="radio-inline" for="star-rating-4">
+              <input type="radio" name="star-rating" id="star-rating-4" value="5">
+              5
+            </label>
+          </div>
+        </div>
+        
+        <!-- Textarea -->
+        <div class="form-group">
+          <label class="col-md-4 control-label" for="review_open">Additional comments about the lesson: </label>
+          <div class="col-md-4">                     
+            <textarea class="form-control" id="review_open" name="review_open">additional comments</textarea>
+          </div>
+        </div>
+        
+        </fieldset>
+        </form>
+        
+</div>
+{% endblock %}

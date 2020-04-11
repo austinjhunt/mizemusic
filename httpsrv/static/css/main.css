@@ -247,6 +247,16 @@ cursor: pointer;
   nav {
       font-size: 4rem;
   }
-  nav div i,a{
+  #navbar_title{
+      font-size: 4rem;
+  }
+  nav div i,a,p{
       font-size:2rem;
+  }
+  .logo { 
+      height:70px;
+      width:70px; 
+  }
+  #navtogglebutton{
+      color:white;
   }

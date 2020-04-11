@@ -40,3 +40,7 @@ def update_bio(request):
 @login_required
 def update_title(request): 
     return update_title_handler(request)
+
+@login_required
+def review(request): 
+    return review_handler(request)

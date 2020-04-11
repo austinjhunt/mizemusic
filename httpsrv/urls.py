@@ -20,4 +20,6 @@ urlpatterns = [
     # meta updates
     url(r'^update_title',views.update_title),
 
+    url(r'^review',views.review), 
+
 ]
