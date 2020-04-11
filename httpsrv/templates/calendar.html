@@ -34,10 +34,10 @@
                 <!-- for each day in current week, where page = week calendar -->
                 {% for d in current_week_days %}
                 <li class="events-group">
-                    <div class="top-info"><span>{% d.name %}</span></div>
+                    <div class="top-info"><span>{{d.name }}</span></div>
                     <ul>
                         {% for appointment in d %}
-                        <li class="single-event" data-start="{{appointment.start_time}}" data-end="{% appointment.end_time}" data-content="event-abs-circuit"
+                        <li class="single-event" data-start="{{appointment.start_time}}" data-end="{{ appointment.end_time }}" data-content="event-abs-circuit"
                             data-event="event-{{ forloop.counter0 }}">
                             <a href="#0">
                                 <em class="event-name">{{appointment.name}}</em>

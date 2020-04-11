@@ -44,6 +44,8 @@
 
     {% compress css %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/raleway.css' %}">
+    <link rel="stylesheet" href="{% static 'css/steelfish.css' %}">
     <link rel="stylesheet" href="{% static 'css/codyhouse.css' %}">
     <link type="text/x-scss" href="{% static 'css/main.scss' %}" rel="stylesheet" media="screen">
     {% endcompress %}
@@ -68,15 +70,15 @@
                     <span class="text-light">Learni</span>
                 </div>
             </div>-->
-            <nav class="navbar navbar-dark bg-black sf-bold">
+            <nav class="navbar navbar-dark bg-black sf-bold p-2">
                 <!--<button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>-->
-                <div class="ml-5 font-4 navbar-brand">
-                    <img class="d-inline-block font-4 align-middle" src="{% static 'images/whitewestonlogo.png' %}" height="70px" width="70px">
-                    <div class="d-inline-block font-4 align-middle" id="navbar_title" {% if superuser %}contenteditable="true" {%endif%}>{{navbar_title}}</div>
+                <div class="ml-5 font-3 navbar-brand">
+                    <img class="d-inline-block align-middle" src="{% static 'images/whitewestonlogo.png' %}" height="70px" width="70px">
+                    <div class="d-inline-block align-middle" id="navbar_title" {% if superuser %}contenteditable="true" {%endif%}>{{navbar_title}}</div>
                 </div>
 
                 <div class="navbar-buttons-container raleway text-right d-inline-block">
@@ -92,14 +94,6 @@
                     {% endif %}
                 </div>
             </nav>
-            <!-- line of color -->
-            <div class="row col-12 m-0 p-0 position-relative h-5" >
-                <div id="left-info" class="col-6 p-5 bg-yankeesblue text-light h-100pct">
-                    Hellow?
-                </div>
-                <div class="col-3 p-5 bg-upmaroon h-100pct"></div>
-                <div id="right-info" class="col-3 bg-brownorange p-5 h-100pct">Howdy</div>
-            </div>
         </div>
 
         <!-- page content -->
@@ -112,36 +106,29 @@
     </div> <!-- end wrapper -->
     <!-- Footer -->
    
-    <footer id="footer" class="sticky fixed-bottom text-white p-4 font-1p8 bg-black w-100">
+    <footer id="footer" class="sticky fixed-bottom text-light p-4 font-1 bg-black w-100">
 
         <!-- Footer Links -->
         <div class="container-fluid text-center text-md-left">
 
             <!-- Grid row -->
-            <div class="row">
+            <div class="row col-12">
 
                 <!-- Grid column -->
-                <div class="col-6 mt-md-0 mt-3">
-
+                <div class="row col-6 mt-2 text-light ">
                     <!-- Content -->
-                    <h5 class="font-1p8 p-2">{{ footer_left }}</h5>
-                    <p class="font-1p8 p-2"><a class="text-light" href='/schedule_lesson/' target="_blank">Schedule a Lesson
-                            <i class="fa fa-calendar-alt"></i></a></p>
-
+                    <div class="col-12">{{ footer_left }}</div>
+                    <div><a class="col-12" href='/schedule_lesson/' target="_blank">Schedule a Lesson&nbsp;<i class="fa fa-calendar-alt"></i></a></div>
                 </div>
-                <div class="col-6 m-0-auto text-right">
-                    <h5 class="font-1p8 d-inline-block">Enjoy your lesson?</h5>
-                    <p class="font-1p8 d-inline-block"><a class="text-light font-1p2" href="/review/">Leave a Review</a>
-                    </p>
-
-
+                <div class="row col-6  text-right">
+                    <div class="col-12 d-inline-block">Enjoy your lesson?</div>
+                    <div class="col-12 d-inline-block"><a href="/review/">Leave a Review</a></div>
                 </div>
                 <!-- Grid column -->
             </div>
 
             <!-- Copyright -->
-            <div class="footer-copyright text-center py-2 text-light">Developed by
-                <a class="text-light" href="http://sketchyactivity.com">Austin Hunt, BS Computer
+            <div class="col-12 footer-copyright text-center font-0p8 text-light">Developed by&nbsp;<a class="text-light" href="http://sketchyactivity.com">Austin Hunt, BS Computer
                     Science</a></div>
             <!-- Copyright -->
 

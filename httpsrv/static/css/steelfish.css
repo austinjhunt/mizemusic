@@ -1,0 +1,36 @@
+
+@font-face{
+    font-family: 'steelfish'; 
+    font-weight: 500; 
+    src: local('steelfish'),
+    url('/static/fonts/steelfish/steelfish-rg.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'steelfish'; 
+    font-weight: 700; 
+    src: local('steelfish'),
+    url('/static/fonts/steelfish/steelfish-bd.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'steelfish'; 
+    font-weight: 900; 
+    src: local('steelfish'),
+    url('/static/fonts/steelfish/steelfish-eb.ttf') format('truetype');
+}
+
+
+.steelfish{
+    font-family: 'steelfish';
+    letter-spacing: .2rem;
+    font-weight: 500;
+}
+.steelfish-bold{
+    font-family: 'steelfish';
+    font-weight: 700;
+}
+.steelfish-extra-bold{
+    font-family: 'steelfish';
+    font-weight: 900;
+}

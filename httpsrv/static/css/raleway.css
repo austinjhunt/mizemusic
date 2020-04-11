@@ -1,0 +1,47 @@
+
+@font-face{
+    font-family: 'raleway'; 
+    font-weight: 500; 
+    src: local('raleway'),
+    url('/static/fonts/raleway/Raleway-Regular.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'raleway'; 
+    font-weight: 700; 
+    src: local('raleway'),
+    url('/static/fonts/raleway/Raleway-Bold.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'raleway'; 
+    font-weight: 900; 
+    src: local('raleway'),
+    url('/static/fonts/raleway/Raleway-ExtraBold.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'raleway'; 
+    font-weight: 300; 
+    src: local('raleway'),
+    url('/static/fonts/raleway/Raleway-Light.ttf') format('truetype');
+}
+
+
+.raleway{
+    font-family: 'raleway';
+    letter-spacing: .2rem;
+    font-weight: 500;
+}
+.raleway-bold{
+    font-family: 'raleway';
+    font-weight: 700;
+}
+.raleway-extra-bold{
+    font-weight: 900;
+    font-family: 'raleway';
+}
+.raleway-light{
+    font-family: 'raleway';
+    font-weight:300px; 
+}

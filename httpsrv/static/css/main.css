@@ -12,20 +12,17 @@
     format('truetype');
 }
 
-@font-face{
-    font-family: 'raleway'; 
-    font-weight: 'normal'; 
-    src: local('raleway'),
-    url('/static/fonts/raleway/Raleway-Regular.ttf') format('truetype');
+a:hover{
+    color: #fff94f !important;
+    text-decoration: none;
 }
-
+.columnhead{
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+}
 body { 
     font-family: 'raleway';
-    letter-spacing: .2rem;
-}
-.raleway{
-    font-family: 'raleway';
-    letter-spacing: .2rem;
+    letter-spacing: .16rem;
 }
 .sf { 
     font-family: 'steelfish' !important;
@@ -49,7 +46,7 @@ body {
 .color-brownorange{
     color:#a44200;
 }
-.color-tigereye{
+a, .color-tigereye{
     color:#d58936;
 }
 .color-lemonyellow{
@@ -227,10 +224,10 @@ cursor: pointer;
   }
   body{
       height:100%;
-      padding-bottom: 100px;
+      padding-bottom:100px;
   }
   #wrapper{
-    margin-bottom:100px;
+    height:100%;
   }
   footer {
     position: absolute;
