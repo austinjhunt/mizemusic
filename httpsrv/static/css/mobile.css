@@ -1,0 +1,50 @@
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    div[class*="col-"] {
+      width: 100% !important;
+      max-width:100% !important;
+    }
+
+    nav {
+        font-size: 1rem;
+    }
+    .navbar-brand{
+        width:100%;
+    }
+    .navbar-buttons-container{
+        margin:0 auto; 
+    }
+    #content{
+        padding-top: 90px!important;
+    }
+    #header{
+        position:fixed;
+        top:0;
+        z-index: 1000;
+    }
+    nav div i,a{
+        font-size:0.8rem;
+    }
+    .logo { 
+        height:30px;
+        widows: 30px;
+    }
+
+
+    body{
+        height:100%;
+        padding-bottom:0px;
+    }
+    #wrapper{
+      height:100%;
+    }
+    footer {
+      position: absolute;
+      bottom: 0;
+      padding:1.5rem;
+      width: 100%;
+      /* Set the fixed height of the footer here */
+      visibility: hidden;
+    }
+}

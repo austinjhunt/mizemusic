@@ -244,4 +244,9 @@ cursor: pointer;
     height: fit-content;
   }
   
-  
+  nav {
+      font-size: 4rem;
+  }
+  nav div i,a{
+      font-size:2rem;
+  }

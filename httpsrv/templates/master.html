@@ -4,6 +4,8 @@
 <html lang="en">
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="shortcut icon" href="{% static 'images/favicon/favicon.ico' %}" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -45,6 +47,7 @@
 
     {% compress css %}
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mobile.css' %}">
     <link rel="stylesheet" href="{% static 'css/raleway.css' %}">
     <link rel="stylesheet" href="{% static 'css/steelfish.css' %}">
     <link rel="stylesheet" href="{% static 'css/codyhouse.css' %}">
@@ -77,21 +80,21 @@
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>-->
-                <div class="ml-5 font-3 navbar-brand">
-                    <img class="d-inline-block align-middle" src="{% static 'images/whitewestonlogo.png' %}" height="70px" width="70px">
+                <div class="ml-5 navbar-brand">
+                    <img class="d-inline-block align-middle logo" src="{% static 'images/whitewestonlogo.png' %}" >
                     <div class="d-inline-block align-middle" id="navbar_title" {% if superuser %}contenteditable="true" {%endif%}>{{navbar_title}}</div>
                 </div>
 
                 <div class="navbar-buttons-container raleway text-right d-inline-block">
                     <!--<input class="mx-5" type="color" id="bgcolorpicker" value="{{bgcolor}}">-->
-                    <a href="/"><i class="font-2 fa fa-home"></i></a>
+                    <a href="/"><i class=" fa fa-home"></i></a>
                     {% if authenticated %}
                     <p class="text-light d-inline-block mx-4">{{ user.username }}</p>
-                    <a href="/logout/"><i class="font-2 fa fa-sign-out-alt"></i></a>
-                    <a href="/calendar/"><i class="font-2 fa fa-calendar-alt"></i></a>
+                    <a href="/logout/"><i class="fa fa-sign-out-alt"></i></a>
+                    <a href="/calendar/"><i class=" fa fa-calendar-alt"></i></a>
                     {% else %}
-                    <a href="/sign_up/"><i class="font-2 fa fa-user-plus"></i></a>
-                    <a href="/login/"><i class="font-2 fa fa-sign-in-alt"></i></a>
+                    <a href="/sign_up/"><i class="fa fa-user-plus"></i></a>
+                    <a href="/login/"><i class=" fa fa-sign-in-alt"></i></a>
                     {% endif %}
                 </div>
             </nav>
