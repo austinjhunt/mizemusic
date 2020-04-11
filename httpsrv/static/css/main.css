@@ -80,6 +80,12 @@ a, .color-tigereye{
 .bg-black{
     background-color: #000000;
 }
+/* background-image */
+.bg-weston{
+    background-image: url('/static/images/weston.jpg');
+    opacity: 0.4;
+    background-repeat: no-repeat;
+}
 .choice_button{
     font-size:2rem;
     margin:20px;
