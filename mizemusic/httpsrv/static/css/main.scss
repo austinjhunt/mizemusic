@@ -1,0 +1,56 @@
+$font : font- ;
+$weight: fw- ; 
+@for $i from 1 through 7 {
+  .#{$font}#{$i} {
+    font-size: #{$i}rem !important; 
+  }
+  @for $j from 1 through 9 {
+    .#{$font}#{$i}p#{$j} {
+      $frac: $j / 10; 
+      $d: $i + $frac;
+      font-size: #{$d}rem !important;
+    }
+  }
+}
+$w : 100; 
+@while $w < 1000  {
+  .#{$weight}#{$w}{
+    font-weight: #{$w} !important;
+  }
+  $w: $w + 100; 
+}
+
+/* border-radiuses in 5 percent intervals */
+$br: br-;
+
+$b: 0; 
+@while $b < 50 { 
+  .#{$br}#{$b}pct{
+    border-radius: percentage($b/100) !important;
+  }
+  $b: $b + 5; 
+}
+
+
+/* heights from 1 - 20 rem; */
+$h: h-;
+
+$i: 0; 
+@while $i < 25 { 
+  .#{$h}#{$i}{
+    height: #{$i}rem !important;
+  }
+  $i: $i + 5; 
+}
+
+/* heights 0,10,20...100%; */
+$h: h-;
+
+$i: 0; 
+@while $i < 110 { 
+  .#{$h}#{$i}pct{
+    height: percentage($i/100) !important;
+  }
+  $i: $i + 10; 
+}
+

@@ -1,0 +1,56 @@
+{% extends 'master.html' %}
+{% block content %}
+
+<div class="row col-12">
+        <div class="col-md-4 mt-3">
+            <h1 class="font-5">Welcome</h1>
+            <p class="font-2">Create an account to schedule a lesson!</p>
+        </div>
+        <div class="col-md-8 mt-3 text-center">
+            <h3 class="m-4">Create an Account <i class="fa fa-user-plus"></i></h3>
+            <form class="form-signin" action="/sign_up/" method="post">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col form-label-group text-center fw-600">
+                        <input type="text" class="form-control text-center" id="first_name" placeholder="First Name"
+                            name="first_name" required autofocus>
+                        <label class="text-center" for="first_name">First Name</label>
+                    </div>
+                    <div class="col form-label-group text-center">
+                        <input type="text" class="form-control text-center" id="last_name" placeholder="Last Name"
+                            name="last_name" required autofocus>
+                        <label class="text-center " for="last_name">Last Name</label>
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col form-label-group text-center fw-600">
+                        <input type="email" id="email" class="form-control text-center" placeholder="Email address"
+                            name="username" required autofocus>
+                        <label class="text-center" for="email">Email address</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col form-label-group text-center">
+                        <input type="password" id="pwd1" class="form-control text-center" placeholder="Password"
+                            name="pwd1" required>
+                        <label class="text-center " for="pwd1">Create Password</label>
+                    </div>
+                    <div class="col form-label-group text-center">
+                        <input type="password" id="pwd2" class="form-control text-center" placeholder="Password"
+                            name="pwd2" required>
+                        <label class="text-center " for="pwd2">Confirm Password</label>
+                    </div>
+
+                </div>
+
+                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Create Account</button>
+            </form>
+        </div>
+
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'master.html' %}
+{% block content %}
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+            {% if next %}
+            <form class="form-signin" action="/login/?next={{next}}" method="post">
+            {% else %}
+            <form class="form-signin" action="/login/" method="post">
+            {%endif %}
+                {% csrf_token %}
+              <div class="form-label-group text-center">
+                <input type="username" id="inputEmail" {% if failed_login %} class="form-control text-center failed_login" {% else %} class="form-control text-center"  {% endif %} placeholder="Email address" name="username" required autofocus>
+                <label class="text-center " for="inputEmail">Email address</label>
+              </div>
+
+              <div class="form-label-group text-center">
+                <input type="password" id="inputPassword" {% if failed_login %} class="form-control text-center failed_login" {% else %} class="form-control text-center"  {% endif %} placeholder="Password" name="password" required>
+                <label class="text-center " for="inputPassword">Password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+            </form>
+            {% if failed_login %}
+                <span class="text-danger">Failed to authenticate with provided credentials, please try again.</span>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

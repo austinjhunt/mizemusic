@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+{%  load static %}
+{% load compress %}
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- draggable UI -->
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!-- fontawesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <!-- datatables -->
+    <link href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+    <script src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(function () {
+            $.ajaxSetup({
+                headers: { "X-CSRFToken": "{{csrf_token}}" }
+            });
+        });
+        csrf_token = "{{ csrf_token}} ";
+        authenticated = "{{authenticated}}";
+        superuser = "{{superuser}}";
+    </script>
+
+    {% compress js %}
+    <script src="{% static 'js/main.js' %}" type="text/javascript"></script>
+    <script src="{% static 'js/codyhouse.js' %}" type="text/javascript"></script>
+    {% endcompress %}
+
+    {% compress css %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'css/codyhouse.css' %}">
+    <link type="text/x-scss" href="{% static 'css/main.scss' %}" rel="stylesheet" media="screen">
+    {% endcompress %}
+
+    <meta charset="UTF-8">
+    <title>{{site_title}}</title>
+</head>
+
+<body class="position-relative">
+    <div id="wrapper" class="position-relative">
+        <section id="new_loader">
+            <div class="lad" id="lad">
+                <div class="spinner-border text-primary" role="status" style="width: 60px; height: 60px;">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </section>
+        <div id="header" class="pos-f-t">
+            <!--<div class="collapse " id="navbarToggleExternalContent">
+                <div class="bg-dark p-4">
+                    <h3 class="text-white font-2p5 navbar-brand">Mize Music</h3>
+                    <span class="text-light">Learni</span>
+                </div>
+            </div>-->
+            <nav class="navbar navbar-dark bg-black sf-bold">
+                <!--<button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>-->
+                <div class="ml-5 font-4 navbar-brand">
+                    <img class="d-inline-block font-4 align-middle" src="{% static 'images/whitewestonlogo.png' %}" height="70px" width="70px">
+                    <div class="d-inline-block font-4 align-middle" id="navbar_title" {% if superuser %}contenteditable="true" {%endif%}>{{navbar_title}}</div>
+                </div>
+
+                <div class="navbar-buttons-container raleway text-right d-inline-block">
+                    <!--<input class="mx-5" type="color" id="bgcolorpicker" value="{{bgcolor}}">-->
+                    <a href="/"><i class="font-2 fa fa-home"></i></a>
+                    {% if authenticated %}
+                    <p class="text-light d-inline-block mx-4">{{ user.username }}</p>
+                    <a href="/logout/"><i class="font-2 fa fa-sign-out-alt"></i></a>
+                    <a href="/calendar/"><i class="font-2 fa fa-calendar-alt"></i></a>
+                    {% else %}
+                    <a href="/sign_up/"><i class="font-2 fa fa-user-plus"></i></a>
+                    <a href="/login/"><i class="font-2 fa fa-sign-in-alt"></i></a>
+                    {% endif %}
+                </div>
+            </nav>
+            <!-- line of color -->
+            <div class="row col-12 m-0 p-0 position-relative h-5" >
+                <div id="left-info" class="col-6 p-5 bg-yankeesblue text-light h-100pct">
+                    Hellow?
+                </div>
+                <div class="col-3 p-5 bg-upmaroon h-100pct"></div>
+                <div id="right-info" class="col-3 bg-brownorange p-5 h-100pct">Howdy</div>
+            </div>
+        </div>
+
+        <!-- page content -->
+        <div id="content" class="position-relative row col-12 p-0 m-0">
+
+            {% block content %}
+            {% endblock %}
+        </div>
+        <!-- end content -->
+    </div> <!-- end wrapper -->
+    <!-- Footer -->
+   
+    <footer id="footer" class="sticky fixed-bottom text-white p-4 font-1p8 bg-black w-100">
+
+        <!-- Footer Links -->
+        <div class="container-fluid text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
+                <!-- Grid column -->
+                <div class="col-6 mt-md-0 mt-3">
+
+                    <!-- Content -->
+                    <h5 class="font-1p8 p-2">{{ footer_left }}</h5>
+                    <p class="font-1p8 p-2"><a class="text-light" href='/schedule_lesson/' target="_blank">Schedule a Lesson
+                            <i class="fa fa-calendar-alt"></i></a></p>
+
+                </div>
+                <div class="col-6 m-0-auto text-right">
+                    <h5 class="font-1p8 d-inline-block">Enjoy your lesson?</h5>
+                    <p class="font-1p8 d-inline-block"><a class="text-light font-1p2" href="/review/">Leave a Review</a>
+                    </p>
+
+
+                </div>
+                <!-- Grid column -->
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-2 text-light">Developed by
+                <a class="text-light" href="http://sketchyactivity.com">Austin Hunt, BS Computer
+                    Science</a></div>
+            <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+</body>
+
+</html>
