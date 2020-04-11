@@ -1,1 +1,1 @@
-web: gunicorn mizemusic.wsgi --log-level debug
+web: gunicorn mizemusic.mizemusic.wsgi --log-level debug
