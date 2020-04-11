@@ -250,7 +250,7 @@ cursor: pointer;
   #navbar_title{
       font-size: 4rem;
   }
-  nav div i,a,p{
+  nav div i, nav div a, nav div p{
       font-size:2rem;
   }
   .logo { 
