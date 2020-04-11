@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import django_heroku
+django_heroku.settings(locals(), logging=False)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -72,16 +74,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mizemusic.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
 
 
 # Password validation
@@ -161,35 +153,3 @@ COMPRESS_PRECOMPILERS = (
 )
 
 LOGIN_URL = "/login/"
-
-""" 
-
-# Payment Processing 
-# Authorize.Net settings
-AUTHORIZE_LOGIN_ID = "..."
-AUTHORIZE_TRANSACTION_KEY = "..."
-
-# PayPal settings
-PAYPAL_TEST = True
-PAYPAL_WPP_USER = "..."
-PAYPAL_WPP_PASSWORD = "..."
-PAYPAL_WPP_SIGNATURE = "..."
-
-
-MERCHANT_TEST_MODE = True    # Toggle for live transactions
-MERCHANT_SETTINGS = {
-    "pay_pal": {
-        "WPP_USER" : "???",
-        "WPP_PASSWORD" : "???",
-        "WPP_SIGNATURE" : "???"
-    }
-}
- """
-# Since merchant relies on django-paypal
-# you have to additionally provide the
-# below attributes
-#PAYPAL_TEST = MERCHANT_TEST_MODE
-#PAYPAL_WPP_USER = MERCHANT_SETTINGS["pay_pal"]["WPP_USER"]
-#PAYPAL_WPP_PASSWORD = MERCHANT_SETTINGS["pay_pal"]["WPP_PASSWORD"]
-##PAYPAL_WPP_SIGNATURE = MERCHANT_SETTINGS["pay_pal"]["WPP_SIGNATURE"]
-# Run python manage.py syncdb to get database tables 
